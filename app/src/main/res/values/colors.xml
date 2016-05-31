@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#04d29f</color>
+    <color name="colorPrimaryDark">#03936f</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="textColor">#999999</color>
+
+    <color name="fb_btn_color">#1976d2</color>
+
+    <color name="white">#ffffff</color>
+
+    <color name="text_blue">#3f51b5</color>
+
+    <color name="tab_indicator">#0091ea</color>
+
+    <color name="light_grey">#D3D3D3</color>
+
+    <color name="vpi__background_holo_dark">#ff000000</color>
+    <color name="vpi__background_holo_light">#fff3f3f3</color>
+    <color name="vpi__bright_foreground_holo_dark">@color/vpi__background_holo_light</color>
+    <color name="vpi__bright_foreground_holo_light">@color/vpi__background_holo_dark</color>
+    <color name="vpi__bright_foreground_disabled_holo_dark">#ff4c4c4c</color>
+    <color name="vpi__bright_foreground_disabled_holo_light">#ffb2b2b2</color>
+    <color name="vpi__bright_foreground_inverse_holo_dark">@color/vpi__bright_foreground_holo_light</color>
+    <color name="vpi__bright_foreground_inverse_holo_light">@color/vpi__bright_foreground_holo_dark</color>
+    <color name="default_circle_indicator_fill_color">#ffffffff</color>
+    <color name="default_circle_indicator_page_color">#00000000</color>
+    <color name="default_circle_indicator_stroke_color">#ffdddddd</color>
+    <color name="default_line_indicator_selected_color">#ff33b5e5</color>
+    <color name="default_line_indicator_unselected_color">#ffbbbbbb</color>
+    <color name="default_title_indicator_footer_color">#ff33b5e5</color>
+    <color name="default_title_indicator_selected_color">#ffffffff</color>
+    <color name="default_title_indicator_text_color">#bbffffff</color>
+    <color name="default_underline_indicator_selected_color">#ff33b5e5</color>
+    <color name="actionbar_background">#ff0380e5</color>
+
+    <color name="black">#ff000000</color>
+    <color name="red">#ffb93c3c</color>
+    <color name="grey">#ff535353</color>
+
+    <color name="light_grey1">#ffd3d3d3</color>
+    <color name="background_tab_pressed">#6633b5e5</color>
+    <color name="background_window">#ffe5e5e5</color>
+    <color name="medium_gray">#ff999999</color>
+    <color name="remove_background">#ffefefef</color>
+    <color name="link_blue">#ff305a79</color>
+    <color name="google_plus">#ffdb4d3f</color>
+    <color name="facebook">#ff1458a2</color>
+    <color name="twitter">#ff32b0ea</color>
+    <color name="email">#ff999999</color>
+    <color name="transparent_black">#b3000000</color>
+    <color name="green">#ff32bb1e</color>
+    <color name="green_dark">#ff40a547</color>
+    <color name="stats_shadow_center">#ffb4b4b4</color>
+    <!--<color name="menu_tile_text">#ff6e6d6d</color>-->
+    <color name="menu_tile_text">#ff000000</color>
+    <!--<color name="menu_slogan_text">#D9000000</color>-->
+    <color name="menu_slogan_text">#ff777777</color>
+    <color name="ratingStar_full">#ff0281e4</color>
+    <color name="ratingStar_empty">#ffb4b4b4</color>
+    <color name="transparent">#00000000</color>
+
+    <color name="activity_bg">#FFEEEEEE</color>
+    <color name="action_bar_red">#DF2B2C</color>
+    <color name="action_bar_red_opacity_50">#80DF2B2C</color>
+    <color name="action_bar_red_opacity_20">#33DF2B2C</color>
+    <color name="action_bar_red_opacity_80">#CCDF2B2C</color>
+    <color name="action_bar_red_opacity_60">#99DF2B2C</color>
+    <color name="action_bar_blue">#0280E4</color>
+    <color name="action_bar_blue_dark">#00335b</color>
+    <color name="action_bar_blue_medium">#014c88</color>
+    <color name="action_bar_blue_50">#800280E4</color>
+    <color name="action_bar_blue_20">#330280E4</color>
+    <color name="action_bar_blue_80">#CC0280E4</color>
+    <color name="action_bar_blue_60">#990280E4</color>
+    <color name="ss_open">#00CD30</color>
+    <color name="ss_closed">#7F817E</color>
+    <color name="ss_24_7">#0280E4</color>
+    <color name="ss_closing">#FAAC14</color>
+    <color name="service_station">#1661D4</color>
+
+    <color name="medium_dark_grey">#545454</color>
+    <color name="dark_grey">#3f3f3f</color>
+</resources>

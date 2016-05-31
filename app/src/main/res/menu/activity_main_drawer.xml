@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_offer_wall"
+            android:icon="@drawable/icon_deal"
+            android:title="Offer Wall"
+            android:checked="true"/>
+        <item
+            android:id="@+id/nav_offer_redeem"
+            android:icon="@drawable/icon_purchase2"
+            android:title="Redeem Offers" />
+        <item
+            android:id="@+id/nav_offer_saved"
+            android:icon="@drawable/icon_draft"
+            android:title="Saved Offers" />
+        <item
+            android:id="@+id/nav_account"
+            android:icon="@drawable/icon_user"
+            android:title="My Account" />
+
+    </group>
+
+    <group android:checkableBehavior="single" >
+
+        <item
+            android:id="@+id/nav_help"
+            android:icon="@drawable/icon_help"
+            android:title="Help" />
+
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/icon_logout"
+            android:title="Logout" />
+
+    </group>
+
+
+    <!--item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Share" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Send" />
+        </menu>
+    </item-->
+
+</menu>
