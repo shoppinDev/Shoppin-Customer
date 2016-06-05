@@ -85,8 +85,18 @@ public class RecyclerViewDataAdapter extends RecyclerView.Adapter<RecyclerViewDa
         Spannable spannable = (Spannable) holder.txtOgPrice.getText();
         spannable.setSpan(STRIKE_THROUGH_SPAN, 0, orgPrice.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
 
-        String discPrice = context.getResources().getString(R.string.Rs) + " " + data.getOriginalValue();
-        holder.txtDiscPrice.setText(discPrice);
+        /*String discPrice = context.getResources().getString(R.string.Rs) + " " + data.getOriginalValue();
+        holder.txtDiscPrice.setText(discPrice);*/
+        if(data.getDiscountType().equals("1")){
+            long originalValue = Long.parseLong(data.getDealAmount());
+            long discountValue = Long.parseLong(data.getDiscountValue());
+            long discountPrice = originalValue - (originalValue/100 * discountValue);
+            String discPrice = context.getResources().getString(R.string.Rs)+" "+discountPrice;
+            holder.txtDiscPrice.setText(discPrice);
+        }else{
+            String discPrice = context.getResources().getString(R.string.Rs)+" "+data.getDiscountValue();
+            holder.txtDiscPrice.setText(discPrice);
+        }
 
         if (data.getIsActive().equals("0")) {
             holder.txtDealEnd.setEnabled(false);
@@ -124,8 +134,6 @@ public class RecyclerViewDataAdapter extends RecyclerView.Adapter<RecyclerViewDa
                     }
                 };
                 timer.schedule(timerTask, 0, 1000);
-
-
             }
         }
 

@@ -61,7 +61,7 @@ public class MyAccountFragment extends Fragment implements View.OnClickListener 
     EditText etName,etMobile;
     ImageButton imgBtnEdit;
     Button btnChangePassword,btnUpdate;
-    EditText etPassword,etConfPassword;
+    EditText etPassword,etConfPassword,etCurrPassword;
     boolean isEditMode = false;
 
     MaterialDialog dialogChangePwd;
@@ -129,6 +129,11 @@ public class MyAccountFragment extends Fragment implements View.OnClickListener 
                         .onPositive(new MaterialDialog.SingleButtonCallback() {
                             @Override
                             public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
+                                if(etCurrPassword.getText().toString().equals("")){
+                                    Toast.makeText(getActivity(),"Please enter your current password",Toast.LENGTH_LONG).show();
+                                    return;
+                                }
+
                                 if(etPassword.getText().toString().equals("")){
                                     //tilPassword.setError("Please enter your password");
                                     Toast.makeText(getActivity(),"Please enter your password",Toast.LENGTH_LONG).show();
@@ -148,7 +153,7 @@ public class MyAccountFragment extends Fragment implements View.OnClickListener 
                                 }
 
                                 if(ModuleClass.isInternetOn){
-                                    new ChangePasswordTask(etPassword.getText().toString()).execute();
+                                    new ChangePasswordTask(etPassword.getText().toString(),etCurrPassword.getText().toString()).execute();
                                 }
                             }
                         })
@@ -166,6 +171,7 @@ public class MyAccountFragment extends Fragment implements View.OnClickListener 
 
                 etPassword = (EditText) dialogView.findViewById(R.id.input_password);
                 etConfPassword = (EditText) dialogView.findViewById(R.id.input_conf_password);
+                etCurrPassword = (EditText) dialogView.findViewById(R.id.input_curr_password);
 
                 dialogChangePwd.show();
             }
@@ -369,13 +375,14 @@ public class MyAccountFragment extends Fragment implements View.OnClickListener 
 
     class ChangePasswordTask extends AsyncTask<Void,Void,Void> {
 
-        String password;
-        boolean success;
+        String password,currPassword;
+        boolean success,isCurrRight;
         String responseError,resultMessage;
         ProgressDialog dialog;
 
-        public ChangePasswordTask(String password){
+        public ChangePasswordTask(String password,String currPassword){
             this.password = password;
+            this.currPassword = currPassword;
         }
 
         @Override
@@ -383,11 +390,12 @@ public class MyAccountFragment extends Fragment implements View.OnClickListener 
             super.onPostExecute(aVoid);
             dialog.dismiss();
             if(success){
-                if(dialogChangePwd != null){
-                    if(dialogChangePwd.isShowing())
-                        dialogChangePwd.dismiss();
-                }
-                Toast.makeText(getActivity(),"Password Successfully Changed",Toast.LENGTH_LONG).show();
+                if(isCurrRight)
+                    if(dialogChangePwd != null){
+                        if(dialogChangePwd.isShowing())
+                            dialogChangePwd.dismiss();
+                    }
+                Toast.makeText(getActivity(),resultMessage,Toast.LENGTH_LONG).show();
             }else{
                 Toast.makeText(getActivity(),responseError,Toast.LENGTH_LONG).show();
             }
@@ -399,6 +407,7 @@ public class MyAccountFragment extends Fragment implements View.OnClickListener 
             ArrayList<NameValuePair> inputArray = new ArrayList<>();
             inputArray.add(new BasicNameValuePair("webmethod", "changepassword"));
             inputArray.add(new BasicNameValuePair("id", ModuleClass.USER_ID));
+            inputArray.add(new BasicNameValuePair("curr_pass", currPassword));
             inputArray.add(new BasicNameValuePair("password", password));
 
             JSONObject responseJSON = new JSONParser().makeHttpRequest(ModuleClass.LIVE_API_PATH+"index.php", "GET", inputArray);
@@ -410,6 +419,10 @@ public class MyAccountFragment extends Fragment implements View.OnClickListener 
                     JSONArray dataArray = responseJSON.getJSONArray("data");
 
                     resultMessage = dataArray.getString(0);
+
+                    if(resultMessage.equalsIgnoreCase("PASSWORD UPDATE SUCCESSFULLY")){
+                        isCurrRight = true;
+                    }
 
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -468,7 +481,7 @@ public class MyAccountFragment extends Fragment implements View.OnClickListener 
 
             ArrayList<NameValuePair> inputArray = new ArrayList<>();
             inputArray.add(new BasicNameValuePair("webmethod", "edit_profile"));
-            inputArray.add(new BasicNameValuePair("id", ModuleClass.USER_ID));
+            inputArray.add(new BasicNameValuePair("customer_id", ModuleClass.USER_ID));
             inputArray.add(new BasicNameValuePair("name",name));
             inputArray.add(new BasicNameValuePair("mobile", mobile));
 

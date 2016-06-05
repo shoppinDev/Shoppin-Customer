@@ -1,6 +1,10 @@
 [
     {
-        "merged": "/Users/divine/Documents/Nitesh/my/DealWala/DealWala/zxing/build/intermediates/res/merged/androidTest/debug/layout/merge_camera_preview_view_finder.xml",
-        "source": "/Users/divine/Documents/Nitesh/my/DealWala/DealWala/zxing/build/intermediates/exploded-aar/me.dm7.barcodescanner/core/1.8.4/res/layout/merge_camera_preview_view_finder.xml"
+        "merged": "F:\\Users\\divine\\Documents\\Nitesh\\my\\DealWala\\DealWala\\zxing\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\merge_camera_preview_view_finder.xml",
+        "source": "F:\\Users\\divine\\Documents\\Nitesh\\my\\DealWala\\DealWala\\zxing\\build\\intermediates\\exploded-aar\\me.dm7.barcodescanner\\core\\1.8.4\\res\\layout\\merge_camera_preview_view_finder.xml"
+    },
+    {
+        "merged": "F:\\Android\\Shoppin-Customer\\zxing\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\merge_camera_preview_view_finder.xml",
+        "source": "F:\\Android\\Shoppin-Customer\\zxing\\build\\intermediates\\exploded-aar\\me.dm7.barcodescanner\\core\\1.8.4\\res\\layout\\merge_camera_preview_view_finder.xml"
     }
 ]

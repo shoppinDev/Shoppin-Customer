@@ -301,8 +301,18 @@ public class ProductDetailActivity extends AppCompatActivity implements ZXingSca
             spannable.setSpan(STRIKE_THROUGH_SPAN, 0, orgPrice.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
 
             //String discPrice = getResources().getString(R.string.Rs) + " " + object.getString("discountvalue");
-            String discPrice = getResources().getString(R.string.Rs) + " " + object.getString("orignal_value");
-            tvDealDiscValue.setText(discPrice);
+           /* String discPrice = getResources().getString(R.string.Rs) + " " + object.getString("orignal_value");
+            tvDealDiscValue.setText(discPrice);*/
+            if(object.getString("discounttype").equals("1")){
+                long originalValue = Long.parseLong(object.getString("dealamount"));
+                long discountValue = Long.parseLong(object.getString("discountvalue"));
+                long discountPrice = originalValue - (originalValue/100 * discountValue);
+                String discPrice = this.getResources().getString(R.string.Rs)+" "+discountPrice;
+                tvDealDiscValue.setText(discPrice);
+            }else{
+                String discPrice = getResources().getString(R.string.Rs) + " " + object.getString("discountvalue");
+                tvDealDiscValue.setText(discPrice);
+            }
 
             final double latitude = Double.parseDouble(object.getString("shop_latitude"));
             final double longitude = Double.parseDouble(object.getString("shop_longitude"));
@@ -589,11 +599,12 @@ public class ProductDetailActivity extends AppCompatActivity implements ZXingSca
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-
-        if (fm.getBackStackEntryCount() == 0) {
-            this.finish();
-        } else {
-            fm.popBackStack();
+        if(fm != null) {
+            if (fm.getBackStackEntryCount() == 0) {
+                this.finish();
+            } else {
+                fm.popBackStack();
+            }
         }
     }
 }
