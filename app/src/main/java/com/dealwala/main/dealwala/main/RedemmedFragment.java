@@ -265,6 +265,7 @@ public class RedemmedFragment extends Fragment {
                 data.setOrderId(object.getString("order_id"));
                 data.setOrderDate(object.getString("order_date"));
                 data.setOrderDate(object.getString("order_status"));
+                data.setDistance("");
 
                 dataList.add(data);
             }

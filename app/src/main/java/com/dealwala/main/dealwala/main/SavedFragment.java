@@ -268,6 +268,7 @@ public class SavedFragment extends Fragment {
                 data.setShopAddress(object.getString("shop_addres"));
                 data.setShopLatitude(object.getString("shop_latitude"));
                 data.setShopLongitude(object.getString("shop_longitude"));
+                data.setDistance("");
 
                 dataList.add(data);
             }

@@ -3,12 +3,14 @@ package com.dealwala.main.dealwala.model;
 /**
  * Created by divine on 02/05/16.
  */
+
 public class DealDataModel {
 
     String dealId,merchantId,shopId,dealCategory,dealSubCategory,dealTitle,dealDesc,dealAmount,dealStartDate,dealEndDate,allDays,originalValue,discountValue,discountType;
     String location,dealUsage,isActive,addedDate,categoryName,subCategoryName,merchantName,shopName;
     String saveId,customerId,shopAddress,shopLatitude,shopLongitude,amount;
     String orderId,orderDate,orderStatus;
+    String distance;
 
     public DealDataModel(String dealId,String merchantId,String shopId,String dealCategory,String dealSubCategory,String dealTitle,
                          String dealDesc,String dealAmount, String dealStartDate,String dealEndDate,String allDays,String originalValue,String discountValue,String discountType,
@@ -81,6 +83,14 @@ public class DealDataModel {
 
     public void setShopLongitude(String shopLongitude) {
         this.shopLongitude = shopLongitude;
+    }
+
+    public void setDistance(String distance) {
+        this.distance = distance;
+    }
+
+    public String getDistance() {
+        return distance;
     }
 
     public String getShopAddress() {

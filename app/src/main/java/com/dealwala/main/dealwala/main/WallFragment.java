@@ -315,6 +315,7 @@ public class WallFragment extends Fragment {
                 inputArray.add(new BasicNameValuePair("lat",""+latitude));
                 inputArray.add(new BasicNameValuePair("long",""+longitude));
             }
+
             Log.d("Deal List input ", inputArray.toString());
             JSONObject responseJSON = new JSONParser().makeHttpRequest(ModuleClass.LIVE_API_PATH + "index.php", "GET", inputArray);
             Log.d("Deal List ", responseJSON.toString());
@@ -388,6 +389,8 @@ public class WallFragment extends Fragment {
                         object.getString("shopname")
                 );
 
+                data.setDistance(object.getString("distance"));
+
                 dataList.add(data);
             }
         } catch (JSONException e) {
@@ -422,7 +425,6 @@ public class WallFragment extends Fragment {
                 } else {
                     Toast.makeText(getActivity(), "No deals found on this search query", Toast.LENGTH_LONG).show();
                     //tvEmpty.setVisibility(View.VISIBLE);
-
                     /*if(recyclerView != null){
                         if(recyclerView.isShown());
                     }*/
