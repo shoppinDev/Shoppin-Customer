@@ -101,23 +101,17 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(etEmailId.getText().toString().equals("")){
-                    //tilEmail.setErrorEnabled(true);
-                    //tilEmail.setError("Please enter your email address");
                     Toast.makeText(LoginActivity.this,"Please enter your email address",Toast.LENGTH_LONG).show();
                     return;
                 }
 
-                if(etPassword.getText().toString().equals("")){
-                    //tilPassword.setErrorEnabled(true);
-                    //tilPassword.setError("Please enter your password");
-                    Toast.makeText(LoginActivity.this,"Please enter your password",Toast.LENGTH_LONG).show();
+                if(!isEmailValid(etEmailId.getText().toString())){
+                    Toast.makeText(LoginActivity.this,"Email address is incorrect",Toast.LENGTH_LONG).show();
                     return;
                 }
 
-                if(!isEmailValid(etEmailId.getText().toString())){
-                    //tilEmail.setErrorEnabled(true);
-                    //tilEmail.setError("Email address is incorrect");
-                    Toast.makeText(LoginActivity.this,"Email address is incorrect",Toast.LENGTH_LONG).show();
+                if(etPassword.getText().toString().equals("")){
+                    Toast.makeText(LoginActivity.this,"Please enter your password",Toast.LENGTH_LONG).show();
                     return;
                 }
 

@@ -6,6 +6,9 @@ import android.os.AsyncTask;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.InputFilter;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -40,9 +43,10 @@ public class SignUpActivity extends AppCompatActivity {
         etEmailId = (EditText) findViewById(R.id.input_email);
         etPassword = (EditText) findViewById(R.id.input_password);
         etConfPassword = (EditText) findViewById(R.id.input_conf_password);
-
         etFullName = (EditText) findViewById(R.id.input_fullname);
         etMobile = (EditText) findViewById(R.id.input_mobile_number);
+        int maxLength = 10;
+        etMobile.setFilters(new InputFilter[] {new InputFilter.LengthFilter(maxLength)});
 
         tilEmailId = (TextInputLayout) findViewById(R.id.input_layout_email);
         tilPassword = (TextInputLayout) findViewById(R.id.input_layout_password);
@@ -58,6 +62,11 @@ public class SignUpActivity extends AppCompatActivity {
                     return;
                 }
 
+                if(!isEmailValid(etEmailId.getText().toString())){
+                    Toast.makeText(SignUpActivity.this,"Email Address is incorrect",Toast.LENGTH_LONG).show();
+                    return;
+                }
+
                 if(etPassword.getText().toString().equals("")){
                     Toast.makeText(SignUpActivity.this,"Please enter your password",Toast.LENGTH_LONG).show();
                     return;
@@ -65,6 +74,11 @@ public class SignUpActivity extends AppCompatActivity {
 
                 if(etConfPassword.getText().toString().equals("")){
                     Toast.makeText(SignUpActivity.this,"Please enter a confirm password",Toast.LENGTH_LONG).show();
+                    return;
+                }
+
+                if(!etPassword.getText().toString().equals(etConfPassword.getText().toString())){
+                    Toast.makeText(SignUpActivity.this,"Password not match",Toast.LENGTH_LONG).show();
                     return;
                 }
 
@@ -78,16 +92,6 @@ public class SignUpActivity extends AppCompatActivity {
                     return;
                 }
 
-                if(!etPassword.getText().toString().equals(etConfPassword.getText().toString())){
-                    Toast.makeText(SignUpActivity.this,"Password not match",Toast.LENGTH_LONG).show();
-                    return;
-                }
-
-                if(!isEmailValid(etEmailId.getText().toString())){
-                    Toast.makeText(SignUpActivity.this,"Email Address is incorrect",Toast.LENGTH_LONG).show();
-                    return;
-                }
-
                 new RegisterTask(etEmailId.getText().toString(),etPassword.getText().toString(),etFullName.getText().toString(),etMobile.getText().toString()).execute();
             }
         });
@@ -96,8 +100,6 @@ public class SignUpActivity extends AppCompatActivity {
         btnFacebook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                /*Intent intent = new Intent(SignUpActivity.this,MainActivity.class);
-                startActivity(intent);*/
                 Toast.makeText(SignUpActivity.this,"Not Implemented yet",Toast.LENGTH_LONG).show();
             }
         });
