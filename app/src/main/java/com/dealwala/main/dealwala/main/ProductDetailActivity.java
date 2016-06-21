@@ -290,13 +290,13 @@ public class ProductDetailActivity extends AppCompatActivity implements ZXingSca
 
             if(!object.isNull("distance")) {
                 if (!object.getString("distance").equals("")) {
-                    if (Float.parseFloat(object.getString("distance")) < 10.0) {
+                    //if (Float.parseFloat(object.getString("distance")) < 10.0) {
                         String distance = String.format("%.1f", Float.parseFloat(object.getString("distance")));
                         tvShopDistance.setText(distance + " Km");
-                    } else {
+                    /*} else {
                         //String distance = String.format("%.1f", Float.parseFloat(data.getShopDistance()));
                         tvShopDistance.setText("0.0 Km");
-                    }
+                    }*/
                     //holder.txtDistance.setText("1.5 km");
                     tvShopDistance.setVisibility(View.VISIBLE);
                 } else {

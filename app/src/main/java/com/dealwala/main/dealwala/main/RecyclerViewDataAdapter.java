@@ -75,13 +75,13 @@ public class RecyclerViewDataAdapter extends RecyclerView.Adapter<RecyclerViewDa
 
         if(data.getDistance() != null) {
             if (!data.getDistance().equals("")) {
-                if (Float.parseFloat(data.getDistance()) < 10.0) {
+                //if (Float.parseFloat(data.getDistance()) < 10.0) {
                     String distance = String.format("%.1f", Float.parseFloat(data.getDistance()));
                     holder.txtDistance.setText(distance + " Km");
-                } else {
+                /*} else {
                     //String distance = String.format("%.1f", Float.parseFloat(data.getShopDistance()));
                     holder.txtDistance.setText("0.0 Km");
-                }
+                }*/
                 //holder.txtDistance.setText("1.5 km");
                 holder.txtDistance.setVisibility(View.VISIBLE);
             } else {

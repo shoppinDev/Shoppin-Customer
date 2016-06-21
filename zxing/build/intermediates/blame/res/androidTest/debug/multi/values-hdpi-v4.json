@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "F:\\Android\\Shoppin-Customer\\zxing\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-hdpi-v4\\values-hdpi-v4.xml",
+        "outputFile": "/Users/divine/Documents/Nitesh/my/DealWala/DealWala/zxing/build/intermediates/res/merged/androidTest/debug/values-hdpi-v4/values-hdpi-v4.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,7 @@
                     "endOffset": 108
                 },
                 "from": {
-                    "file": "F:\\Android\\Shoppin-Customer\\zxing\\build\\intermediates\\exploded-aar\\me.dm7.barcodescanner\\core\\1.8.4\\res\\values-hdpi-v4\\values-hdpi-v4.xml",
+                    "file": "/Users/divine/Documents/Nitesh/my/DealWala/DealWala/zxing/build/intermediates/exploded-aar/me.dm7.barcodescanner/core/1.8.4/res/values-hdpi-v4/values-hdpi-v4.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -30,7 +30,7 @@
                     "endOffset": 164
                 },
                 "from": {
-                    "file": "F:\\Android\\Shoppin-Customer\\zxing\\build\\intermediates\\exploded-aar\\me.dm7.barcodescanner\\core\\1.8.4\\res\\values-hdpi-v4\\values-hdpi-v4.xml",
+                    "file": "/Users/divine/Documents/Nitesh/my/DealWala/DealWala/zxing/build/intermediates/exploded-aar/me.dm7.barcodescanner/core/1.8.4/res/values-hdpi-v4/values-hdpi-v4.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
